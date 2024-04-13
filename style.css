@@ -1,0 +1,171 @@
+/* Este es una variable para poder usarlo en otros lugares */
+:root {
+    --border-radius: 20px;
+    --backgroun-objetos: rgba(0, 0, 0, 0.38);
+    --color: white;
+    --font-size: 101px;
+}
+
+
+body {
+    margin: 0;
+    background: linear-gradient(90deg, rgba(174, 188, 238, 0.9220063025210083) 1%, rgba(148, 187, 233, 1) 33%);
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.letraActual{
+    color: red;
+    };
+
+/* Generamos un nuevo div para ordenar correctamente los leemtnos por dentro agragando un display:grid 
+Prestar atencion a el orden en cascada en CSS */
+.ordenado {
+    display: grid
+}
+
+.escondido {
+    display: none;
+}
+
+.invisible {
+    position: absolute;
+    top: 0px;
+}
+
+input {
+    
+    background-color: transparent;
+    /* Hace que el fondo del input sea transparente */
+    border-color: transparent;
+    /* Hace que el borde del input sea transparente */
+    outline: none;
+    /* Elimina el contorno del input al estar enfocado */
+    color: black;
+    /* Color del texto dentro del input */
+
+    color: transparent;
+    border: none;
+}
+
+#barraProgresoRed {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: red;
+
+}
+
+#barraProgreso div {
+    height: 10px;
+    background-color: green;
+
+}
+
+.completarTiempo {
+    animation-name: completarBarra;
+    animation-duration: var(--tiempo);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+}
+
+/* Solo modificamos la altura de mi div con id:final */
+#final {
+    margin-top: 50px;
+    /* display: grid; */
+}
+
+/* este es el css de mis parrafos  */
+#final p {
+    background-color: var(--backgroun-objetos);
+    color: var(--color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+/* Modificamos el aspecto del boton mejor dicho de ambos botones */
+button {
+    margin-top: 50px;
+    padding: 50px;
+    border: unset;
+    border-radius: var(--border-radius);
+    background-color: var(--backgroun-objetos);
+    color: var(--color);
+    font-size: var(--font-size);
+    
+    
+}
+
+@keyframes completarBarra {
+    0% {
+        width: 0%;
+    }
+    
+    100% {
+        width: 100%;
+    }
+    
+}
+
+/* esta es la palabra que se va a ver, la cual tenemos que escribir */
+/* span {
+    font-family: cursive;
+    font-size: xx-large;
+}; */
+/* .invisiblees{
+    opacity: 0%;
+} */
+
+.desaparecer{
+    font-size: var(--font-size);
+    position: absolute;
+    animation-name: desaparecer;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+}
+@keyframes desaparecer {
+    0% {
+        
+    }
+    
+    50% {
+        color: red;
+        top: 100%;
+    }
+    100%{
+        transform: translate(-100%);
+        opacity:0%;
+        font-size: calc(var(--font-size)/2);
+    }
+    
+}
+
+#palabraActual {
+    font-size: var(--font-size);
+};
+span{
+    color: deepskyblue;
+}
+p#letrasIncorrectas span{
+    color: red;
+}
+p#palabrasPorMinuto span{
+    color:greenyellow;
+}
+/* modificamos el texto por lo tanto seleccionamos todo lo que tiene texto adentro */
+p,
+b,
+span,
+footer {
+    font-family: cursive;
+
+};
+/* index con texto invisible  */
+
+  
